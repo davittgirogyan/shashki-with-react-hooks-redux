@@ -1,0 +1,27 @@
+/* .map-container{
+    position: relative;
+} */
+.qar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    margin:10px auto 0;
+    cursor: grab;
+}
+.qar-sev{
+    background:black;
+}
+.qar-spitak{
+    background: white;
+}
+.elem{
+    width:60px;
+    height:60px;
+    /* position: relative; */
+}
+.elem-dark{
+    background:#7D3B0A;
+}
+.elem-white{
+    background: #E6BA99;
+}
