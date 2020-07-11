@@ -36,7 +36,7 @@ const QarSev = (props)=>{
                 dispatch(changeSevQaritex(props.tox,props.syun,'right'))
 
             }else if(skzbiY-clientY>45 && skzbiY-clientY<95){
-                dispatch(changeSevQaritex(props.tox,props.syun,'het-right'))
+                // dispatch(changeSevQaritex(props.tox,props.syun,'het-right'))
                 console.log('het utel ach')
             }else{
                 setClientX(skzbiX);
