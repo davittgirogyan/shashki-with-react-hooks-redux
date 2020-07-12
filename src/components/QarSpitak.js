@@ -13,6 +13,7 @@ const QarSpitak = (props)=>{
 
     const mouseDown = (e)=>{
         e.target.style.cursor= "grabbing";
+        e.target.style.boxShadow="5px 5px 5px #888888"
         setClientX(e.clientX);
         setClientY(e.clientY);
         setMoveMethod(true);
@@ -30,12 +31,16 @@ const QarSpitak = (props)=>{
     }
     const mouseUp = (e)=>{
         e.target.style.cursor= "grab";
+        e.target.style.boxShadow="none"
         e.target.style.position = "initial"
         setMoveMethod(false);
         if(skzbiX-clientX<-40 && skzbiX-clientX>-110 && props.syun<7){
             if(skzbiY-clientY>45 && skzbiY-clientY<95){
                 dispatch(changeSpitakQaritex(props.tox,props.syun,'right'))
 
+            }else if(skzbiY-clientY<-45 && skzbiY-clientY>-95){
+                dispatch(changeSpitakQaritex(props.tox,props.syun,'het-right'));
+                // console.log('spitaki het ach')
             }else{
                 setClientX(skzbiX);
                 setClientY(skzbiY);
@@ -45,12 +50,17 @@ const QarSpitak = (props)=>{
             if(skzbiY-clientY>45 && skzbiY-clientY<85){
                 dispatch(changeSpitakQaritex(props.tox,props.syun,'left'));
 
-            }else{
+            }else if(skzbiY-clientY<-45 && skzbiY-clientY>-95){
+                dispatch(changeSpitakQaritex(props.tox,props.syun,'het-left'));
+                // console.log("spitaki het dzax")
+            }
+            else{
                 setClientX(skzbiX);
                 setClientY(skzbiY);
 
             }
-        }else{
+        }
+        else{
             setClientX(skzbiX);
             setClientY(skzbiY);
         }

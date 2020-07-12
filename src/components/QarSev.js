@@ -12,6 +12,7 @@ const QarSev = (props)=>{
 
     const mouseDown = (e)=>{
         e.target.style.cursor= "grabbing";
+        e.target.style.boxShadow="5px 5px 5px #888888"
         setClientX(e.clientX);
         setClientY(e.clientY);
         setMoveMethod(true);
@@ -28,28 +29,31 @@ const QarSev = (props)=>{
         }
     }
     const mouseUp = (e)=>{
-        e.target.style.cursor= "grab";
         e.target.style.position = "initial"
+        e.target.style.boxShadow="none"
+        // console.log(skzbiX-clientX)
+        // console.log(skzbiY-clientY)
         setMoveMethod(false);
-        if(skzbiX-clientX<-45 && skzbiX-clientX>-110){
-            if(skzbiY-clientY<-45 && skzbiY-clientY>-95){
+        if(skzbiX-clientX<-40 && skzbiX-clientX>-110){
+            if(skzbiY-clientY<-40 && skzbiY-clientY>-95){
                 dispatch(changeSevQaritex(props.tox,props.syun,'right'))
 
-            }else if(skzbiY-clientY>45 && skzbiY-clientY<95){
-                // dispatch(changeSevQaritex(props.tox,props.syun,'het-right'))
-                console.log('het utel ach')
+            }else if(skzbiY-clientY>40 && skzbiY-clientY<95){
+                dispatch(changeSevQaritex(props.tox,props.syun,'het-right'))
+                // console.log('het utel ach')
             }else{
                 setClientX(skzbiX);
                 setClientY(skzbiY);
 
             }
         }
-        else if(skzbiX-clientX>45 && skzbiX-clientX<85 ){
-            if(skzbiY-clientY<-45 && skzbiY-clientY>-95){
+        else if(skzbiX-clientX>40 && skzbiX-clientX<90 ){
+            if(skzbiY-clientY<-40 && skzbiY-clientY>-95){
                 dispatch(changeSevQaritex(props.tox,props.syun,'left'));
 
-            }else if(skzbiY-clientY>45 && skzbiY-clientY<85){
-                console.log('het utel dzax')
+            }else if(skzbiY-clientY>40 && skzbiY-clientY<90){
+                dispatch(changeSevQaritex(props.tox,props.syun,'het-left'))
+                // console.log('het utel dzax')
             }else{
                 setClientX(skzbiX);
                 setClientY(skzbiY);
